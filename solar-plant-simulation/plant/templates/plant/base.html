@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Solar Plant{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'plant/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>☀ <span class="brand-name">Entrix</span> Solar Plant</h1>
+    <nav>
+      <a href="{% url 'overview_page' %}">Plant Overview</a>
+      <a href="{% url 'inverters_page' %}">Inverter Data</a>
+      <a href="{% url 'about_page' %}">About</a>
+    </nav>
+  </header>
+ <main>
+  {% if request.resolver_match.url_name != 'about_page' %}
+    <div class="toolbar">
+      <span id="updated" aria-live="polite">Waiting for data...</span>
+      <button id="refresh" type="button">Refresh now</button>
+    </div>
+    <p id="error" role="alert"></p>
+  {% endif %}
+
+  {% block content %}{% endblock %}
+</main>
+  <script src="{% static 'plant/common.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

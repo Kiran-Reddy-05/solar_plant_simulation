@@ -1,0 +1,116 @@
+
+{% extends 'plant/base.html' %}
+{% load static %}
+
+{% block title %}About Us | Entrix Solar Plant{% endblock %}
+
+{% block content %}
+<div class="about-page">
+
+    <!-- Hero section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <span class="about-label">POWERING A GREENER FUTURE</span>
+            <h2>Clean Energy.<br><span>Brighter Tomorrow.</span></h2>
+            <p>
+                Welcome to Entrix Solar Plant. We use the power of sunlight
+                to support a cleaner, more sustainable energy future.
+                Our dashboard helps monitor plant performance, weather
+                conditions, and inverter data in one place.
+            </p>
+            <a href="{% url 'overview_page' %}" class="about-button">
+                Explore Dashboard →
+            </a>
+        </div>
+
+        <div class="about-sun">
+            <div class="sun-icon">☀</div>
+            <div class="sun-caption">Harnessing the power of the sun</div>
+        </div>
+    </section>
+
+    <!-- About information -->
+    <section class="about-intro">
+        <span class="about-label">WHO WE ARE</span>
+        <h2>Energy Monitoring Made Simple</h2>
+        <p>
+            The Entrix Solar Plant dashboard provides a clear view of
+            solar plant operations. By bringing plant-level readings,
+            weather information, and inverter telemetry together, it
+            makes it easier to understand system performance and identify
+            potential issues.
+        </p>
+    </section>
+
+    <!-- Feature cards -->
+    <section class="about-features">
+        <article class="about-feature">
+            <div class="feature-icon">☀</div>
+            <h3>Solar Performance</h3>
+            <p>View plant capacity, active power, and capacity utilization.</p>
+        </article>
+
+        <article class="about-feature">
+            <div class="feature-icon">🌤</div>
+            <h3>Weather Insights</h3>
+            <p>Monitor temperature, solar irradiance, wind speed, and humidity.</p>
+        </article>
+
+        <article class="about-feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Inverter Monitoring</h3>
+            <p>Review inverter readings and identify operational alerts.</p>
+        </article>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-info">
+            <span class="about-label">GET IN TOUCH</span>
+            <h2>Let's Talk</h2>
+            <p>
+                Have a question or feedback about the solar plant
+                monitoring dashboard? Send us a message.
+            </p>
+
+            <div class="contact-highlight">
+                <span>☀</span>
+                <div>
+                    <strong>Building a sustainable future</strong>
+                    <p>One step at a time, powered by clean energy.</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form"
+              onsubmit="event.preventDefault(); document.getElementById('formStatus').textContent='The form is ready, but message sending has not been configured yet.';">
+
+            <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName"
+                       name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactEmail">Your Email</label>
+                <input type="email" id="contactEmail"
+                       name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactMessage">Your Message</label>
+                <textarea id="contactMessage" name="message"
+                          rows="5" placeholder="How can we help you?"
+                          required></textarea>
+            </div>
+
+            <button type="submit" class="contact-submit">
+                Send Message →
+            </button>
+
+            <p id="formStatus" aria-live="polite"></p>
+        </form>
+    </section>
+
+</div>
+{% endblock %}

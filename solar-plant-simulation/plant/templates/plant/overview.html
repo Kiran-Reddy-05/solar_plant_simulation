@@ -1,0 +1,91 @@
+
+{% extends 'plant/base.html' %}
+{% load static %}
+
+{% block title %}Plant Overview | Entrix Solar Plant{% endblock %}
+
+{% block content %}
+<div class="dashboard-page">
+
+    <section class="dashboard-heading">
+        <div>
+            <span class="dashboard-eyebrow">ENTRIX ENERGY MONITORING</span>
+            <h2>Plant Overview</h2>
+            <p>Monitor solar generation, plant utilization, and live weather conditions.</p>
+        </div>
+        <div class="dashboard-icon">☀</div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <h3>Plant Performance</h3>
+                <p>Key generation indicators</p>
+            </div>
+        </div>
+
+        <div class="cards dashboard-cards">
+            <article class="card metric-card">
+                <span class="metric-icon">⚡</span>
+                <h3>Plant Capacity</h3>
+                <strong id="capacity">--</strong>
+            </article>
+
+            <article class="card metric-card">
+                <span class="metric-icon">↗</span>
+                <h3>Active Power</h3>
+                <strong id="power">--</strong>
+            </article>
+
+            <article class="card metric-card">
+                <span class="metric-icon">◉</span>
+                <h3>Capacity Utilization</h3>
+                <strong id="utilization">--</strong>
+            </article>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <h3>Weather Station</h3>
+                <p>Environmental conditions at the plant</p>
+            </div>
+            <span class="live-label"><span></span> Live monitoring</span>
+        </div>
+
+        <div class="cards dashboard-cards">
+            <article class="card metric-card weather-card">
+                <span class="metric-icon">🌡</span>
+                <h3>Temperature</h3>
+                <strong id="temperature">--</strong>
+            </article>
+
+            <article class="card metric-card weather-card">
+                <span class="metric-icon">☀</span>
+                <h3>Solar Irradiance</h3>
+                <strong id="irradiance">--</strong>
+            </article>
+
+            <article class="card metric-card weather-card">
+                <span class="metric-icon">〰</span>
+                <h3>Wind Speed</h3>
+                <strong id="wind">--</strong>
+            </article>
+
+            <article class="card metric-card weather-card">
+                <span class="metric-icon">💧</span>
+                <h3>Humidity</h3>
+                <strong id="humidity">--</strong>
+            </article>
+        </div>
+    </section>
+
+    <p class="dashboard-note">Plant readings refresh automatically every 3 seconds.</p>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'plant/overview.js' %}"></script>
+{% endblock %}
